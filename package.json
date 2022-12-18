@@ -1,0 +1,21 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "Assignment: File Manager",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mark-karnaukh/file-manager.git"
+  },
+  "author": "Mark Karnaukh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mark-karnaukh/file-manager/issues"
+  },
+  "homepage": "https://github.com/mark-karnaukh/file-manager#readme"
+}
