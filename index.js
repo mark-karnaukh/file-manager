@@ -1,10 +1,19 @@
-import { getUserName } from './helpers/getUserName.js'
+import os from 'os'
+
+import { getUserName } from './helpers/getUserName.js';
+import { handleUserInput } from './helpers/handleUserInput.js'
+import { logMessage, MESSAGE_WELCOME, MESSAGE_CWD } from './helpers/logMessage.js'
 
 const runFileManager = () => {
-    console.log("File manager started...");
-    console.log("Arguments", process.argv.slice(2))
+    logMessage(MESSAGE_WELCOME, getUserName());
+    
+    const userHomeDir = os.homedir();
 
-    console.log('The username is:', getUserName())
+    process.chdir(userHomeDir);
+
+    logMessage(MESSAGE_CWD, process.cwd());
+
+    handleUserInput(getUserName());
 }
 
 runFileManager();
