@@ -1,8 +1,9 @@
 import os from 'os'
 
 import { getUserName } from './helpers/getUserName.js';
-import { handleUserInput } from './helpers/handleUserInput.js'
-import { logMessage, MESSAGE_WELCOME, MESSAGE_CWD } from './helpers/logMessage.js'
+import { handleUserInput } from './helpers/handleUserInput.js';
+import { logMessage } from './helpers/logMessage.js';
+import { MESSAGE_WELCOME, MESSAGE_CWD } from './constants.js';
 
 const runFileManager = () => {
     logMessage(MESSAGE_WELCOME, getUserName());

@@ -1,10 +1,5 @@
-import { messages, MESSAGE_INVALID_INPUT } from './logMessage.js'
-
-// Command names
-// Navigation & working directory (nwd)
-const COMMAND_UP = 'up';
-const COMMAND_CD = 'cd';
-const COMMAND_LS = 'ls';
+import { messages } from './logMessage.js';
+import { MESSAGE_INVALID_INPUT, COMMAND_UP, COMMAND_CD, COMMAND_LS } from '../constants.js';
 
 const getCommandValidationRules = () => ({
     [COMMAND_UP]: new RegExp(/up/, 'g'),

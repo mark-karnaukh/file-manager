@@ -1,8 +1,4 @@
-export const MESSAGE_WELCOME = 'welcome';
-export const MESSAGE_GOODBYE = 'goodbye';
-export const MESSAGE_CWD = 'cwd';
-export const MESSAGE_INVALID_INPUT = 'invalid_input';
-export const MESSAGE_OPERATION_FAILED = 'operation_failed';
+import { MESSAGE_WELCOME, MESSAGE_GOODBYE, MESSAGE_CWD, MESSAGE_INVALID_INPUT, MESSAGE_OPERATION_FAILED } from '../constants.js'
 
 export const messages = {
     [MESSAGE_WELCOME]: (userName) => `Welcome to the File Manager, ${userName}!`,

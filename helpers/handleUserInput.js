@@ -1,7 +1,10 @@
 import readline from 'readline';
 
 import { validateCommand } from './validateCommand.js';
-import { logMessage, MESSAGE_GOODBYE, MESSAGE_CWD } from './logMessage.js'
+import { logMessage } from './logMessage.js';
+import { getCommand } from './getCommand.js';
+import { executeCommand } from '../commands/executeCommand.js';
+import {  MESSAGE_GOODBYE, MESSAGE_CWD } from '../constants.js';
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -9,8 +12,8 @@ const rl = readline.createInterface({
 });
 
 export const handleUserInput = function(userName) {
-    rl.question("===> ", (line) => {
-        const command = line.trim().replace(/  +/g, ' ');
+    rl.question("===> ", async (line) => {
+        const command = getCommand(line);
 
         if (command == ".exit"){
             rl.close();
@@ -19,6 +22,7 @@ export const handleUserInput = function(userName) {
 
         console.log('Command entered: ', command);
         validateCommand(command);
+        await executeCommand(command);
         logMessage(MESSAGE_CWD, process.cwd());
         handleUserInput(userName);
     });
