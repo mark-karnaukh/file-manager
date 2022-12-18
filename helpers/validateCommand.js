@@ -1,9 +1,9 @@
 import { messages } from './logMessage.js';
 import { MESSAGE_INVALID_INPUT, COMMAND_UP, COMMAND_CD, COMMAND_LS } from '../constants.js';
 
-const getCommandValidationRules = () => ({
+export const getCommandValidationRules = () => ({
     [COMMAND_UP]: new RegExp(/up/, 'g'),
-    [COMMAND_CD]: new RegExp(/(cd) ([a-zA-Z0-9_\-\\\/\.]+)/, 'g'),
+    [COMMAND_CD]: new RegExp(/(cd) ([a-zA-Z0-9_\-\\\/\.:~"']+)/, 'g'),
     [COMMAND_LS]: new RegExp(/ls/, 'g')
 });
 

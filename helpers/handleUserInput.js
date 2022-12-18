@@ -1,10 +1,10 @@
 import readline from 'readline';
 
 import { validateCommand } from './validateCommand.js';
-import { logMessage } from './logMessage.js';
+import { logMessage, messages } from './logMessage.js';
 import { getCommand } from './getCommand.js';
 import { executeCommand } from '../commands/executeCommand.js';
-import {  MESSAGE_GOODBYE, MESSAGE_CWD } from '../constants.js';
+import {  MESSAGE_GOODBYE, MESSAGE_CWD, MESSAGE_OPERATION_FAILED } from '../constants.js';
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -20,9 +20,14 @@ export const handleUserInput = function(userName) {
             return logMessage(MESSAGE_GOODBYE, userName);
         } 
 
-        console.log('Command entered: ', command);
         validateCommand(command);
-        await executeCommand(command);
+
+        try {
+         await executeCommand(command);
+        } catch {
+            throw new Error(messages[MESSAGE_OPERATION_FAILED]);
+        }
+
         logMessage(MESSAGE_CWD, process.cwd());
         handleUserInput(userName);
     });

@@ -17,5 +17,12 @@ export const navigation = {
             ...lsOutput.filter(item => item['Type'] === 'directory').sort(),
             ...lsOutput.filter(item => item['Type'] === 'file').sort(),
         ]);
+    },
+    [COMMAND_CD]: (url) => {
+        if (path.isAbsolute(url)) {
+            return process.chdir(path.resolve(url));
+        }
+
+        return process.chdir(path.resolve(process.cwd(), url));
     }
 }
