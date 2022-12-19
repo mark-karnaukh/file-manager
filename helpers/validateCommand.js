@@ -16,7 +16,9 @@ import {
     COMMAND_FILES_ADD,
     COMMAND_FILES_MV,
     COMMAND_FILES_RN,
-    COMMAND_FILES_CP
+    COMMAND_FILES_CP,
+    COMMAND_ZIP_COMPRESS,
+    COMMAND_ZIP_DECOMPRESS
 } from '../constants.js';
 
 export const getCommandValidationRules = () => ({
@@ -35,6 +37,8 @@ export const getCommandValidationRules = () => ({
     [COMMAND_FILES_MV]: new RegExp(/(mv )(([a-zA-Z0-9_\-\\\/\.: "']+))/, 'g'),
     [COMMAND_FILES_RN]: new RegExp(/(rn )(([a-zA-Z0-9_\-\\\/\.: "']+))/, 'g'),
     [COMMAND_FILES_CP]: new RegExp(/(cp )(([a-zA-Z0-9_\-\\\/\.: "']+))/, 'g'),
+    [COMMAND_ZIP_COMPRESS]: new RegExp(/(compress )(([a-zA-Z0-9_\-\\\/\.: "']+))/, 'g'),
+    [COMMAND_ZIP_DECOMPRESS]: new RegExp(/(decompress )(([a-zA-Z0-9_\-\\\/\.: "']+))/, 'g'),
 
 });
 

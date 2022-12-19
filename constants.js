@@ -29,3 +29,7 @@ export const COMMAND_FILES_RN = 'rn';
 export const COMMAND_FILES_CP = 'cp';
 export const COMMAND_FILES_MV = 'mv';
 export const COMMAND_FILES_RM = 'rm';
+
+// Compress and decompress operations
+export const COMMAND_ZIP_COMPRESS = 'compress';
+export const COMMAND_ZIP_DECOMPRESS = 'decompress';
