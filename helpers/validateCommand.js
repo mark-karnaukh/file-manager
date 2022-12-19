@@ -9,7 +9,8 @@ import {
     COMMAND_OS_CPUS, 
     COMMAND_OS_HOME_DIR,
     COMMAND_OS_USER_NAME,
-    COMMAND_OS_ARCHITECTURE
+    COMMAND_OS_ARCHITECTURE,
+    COMMAND_HASH
 } from '../constants.js';
 
 export const getCommandValidationRules = () => ({
@@ -20,7 +21,8 @@ export const getCommandValidationRules = () => ({
     [COMMAND_OS_CPUS]: new RegExp(/(os) (--cpus)/, 'g'),
     [COMMAND_OS_HOME_DIR]: new RegExp(/(os) (--homedir)/, 'g'),
     [COMMAND_OS_USER_NAME]: new RegExp(/(os) (--username)/, 'g'),
-    [COMMAND_OS_ARCHITECTURE]: new RegExp(/(os) (--architecture)/, 'g')
+    [COMMAND_OS_ARCHITECTURE]: new RegExp(/(os) (--architecture)/, 'g'),
+    [COMMAND_HASH]: new RegExp(/(hash) (["']*)([a-zA-Z0-9_\-\\\/\.: ]+)\2/, 'g')
 
 });
 

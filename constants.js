@@ -18,3 +18,6 @@ export const COMMAND_OS_CPUS = '--cpus';
 export const COMMAND_OS_HOME_DIR = '--homedir';
 export const COMMAND_OS_USER_NAME = '--username';
 export const COMMAND_OS_ARCHITECTURE = '--architecture';
+
+// Hash calculation
+export const COMMAND_HASH = 'hash';
