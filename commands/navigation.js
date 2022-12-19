@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs/promises';
 
+import { getResolvedPath } from '../helpers/getResolvedPath.js';
 import { COMMAND_CD, COMMAND_UP, COMMAND_LS } from '../constants.js';
 
 export const navigation = {
@@ -19,10 +20,6 @@ export const navigation = {
         ]);
     },
     [COMMAND_CD]: (url) => {
-        if (path.isAbsolute(url)) {
-            return process.chdir(path.resolve(url));
-        }
-
-        return process.chdir(path.resolve(process.cwd(), url));
+        return process.chdir(getResolvedPath(url));
     }
 }
