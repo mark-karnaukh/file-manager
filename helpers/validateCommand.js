@@ -1,9 +1,9 @@
 import { messages } from './logMessage.js';
 import { 
     MESSAGE_INVALID_INPUT, 
-    COMMAND_UP, 
-    COMMAND_CD, 
-    COMMAND_LS, 
+    COMMAND_NWD_UP, 
+    COMMAND_NWD_CD, 
+    COMMAND_NWD_LS, 
     COMMAND_OS_EOL, 
     COMMAND_OS, 
     COMMAND_OS_CPUS, 
@@ -13,9 +13,9 @@ import {
 } from '../constants.js';
 
 export const getCommandValidationRules = () => ({
-    [COMMAND_UP]: new RegExp(/up/, 'g'),
-    [COMMAND_CD]: new RegExp(/(cd) (["']*)([a-zA-Z0-9_\-\\\/\.: ]+)\2/, 'g'),
-    [COMMAND_LS]: new RegExp(/ls/, 'g'),
+    [COMMAND_NWD_UP]: new RegExp(/up/, 'g'),
+    [COMMAND_NWD_CD]: new RegExp(/(cd) (["']*)([a-zA-Z0-9_\-\\\/\.: ]+)\2/, 'g'),
+    [COMMAND_NWD_LS]: new RegExp(/ls/, 'g'),
     [COMMAND_OS_EOL]: new RegExp(/(os) (--EOL)/, 'g'),
     [COMMAND_OS_CPUS]: new RegExp(/(os) (--cpus)/, 'g'),
     [COMMAND_OS_HOME_DIR]: new RegExp(/(os) (--homedir)/, 'g'),

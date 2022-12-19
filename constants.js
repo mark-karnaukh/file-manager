@@ -7,9 +7,9 @@ export const MESSAGE_OPERATION_FAILED = 'operation_failed';
 
 // Command names
 // Navigation & working directory (nwd)
-export const COMMAND_UP = 'up';
-export const COMMAND_CD = 'cd';
-export const COMMAND_LS = 'ls';
+export const COMMAND_NWD_UP = 'up';
+export const COMMAND_NWD_CD = 'cd';
+export const COMMAND_NWD_LS = 'ls';
 
 // Operating system info
 export const COMMAND_OS = 'os';
