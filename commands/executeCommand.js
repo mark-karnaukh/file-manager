@@ -1,6 +1,7 @@
 import { navigation } from './navigation.js';
 import { osInfo } from './os.js';
 import { hash } from './hash.js';
+import { files } from './files.js';
 
 export const executeCommand = (command) => {
     const [commandType, ...commandValue] = command.split(' ');
@@ -8,6 +9,7 @@ export const executeCommand = (command) => {
     return {
         ...navigation,
         ...osInfo,
-        ...hash
+        ...hash,
+        ...files
     }[commandType](commandValue.join(' ').replace(/['"]+/g, ''));
 };

@@ -21,3 +21,11 @@ export const COMMAND_OS_ARCHITECTURE = '--architecture';
 
 // Hash calculation
 export const COMMAND_HASH = 'hash';
+
+// Basic operations with files
+export const COMMAND_FILES_CAT = 'cat';
+export const COMMAND_FILES_ADD = 'add';
+export const COMMAND_FILES_RN = 'rn';
+export const COMMAND_FILES_CP = 'cp';
+export const COMMAND_FILES_MV = 'mv';
+export const COMMAND_FILES_RM = 'rm';

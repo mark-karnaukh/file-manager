@@ -10,7 +10,10 @@ import {
     COMMAND_OS_HOME_DIR,
     COMMAND_OS_USER_NAME,
     COMMAND_OS_ARCHITECTURE,
-    COMMAND_HASH
+    COMMAND_HASH,
+    COMMAND_FILES_RM,
+    COMMAND_FILES_CAT,
+    COMMAND_FILES_ADD
 } from '../constants.js';
 
 export const getCommandValidationRules = () => ({
@@ -22,7 +25,10 @@ export const getCommandValidationRules = () => ({
     [COMMAND_OS_HOME_DIR]: new RegExp(/(os) (--homedir)/, 'g'),
     [COMMAND_OS_USER_NAME]: new RegExp(/(os) (--username)/, 'g'),
     [COMMAND_OS_ARCHITECTURE]: new RegExp(/(os) (--architecture)/, 'g'),
-    [COMMAND_HASH]: new RegExp(/(hash) (["']*)([a-zA-Z0-9_\-\\\/\.: ]+)\2/, 'g')
+    [COMMAND_HASH]: new RegExp(/(hash) (["']*)([a-zA-Z0-9_\-\\\/\.: ]+)\2/, 'g'),
+    [COMMAND_FILES_RM]: new RegExp(/(rm) (["']*)([a-zA-Z0-9_\-\\\/\.: ]+)\2/, 'g'),
+    [COMMAND_FILES_CAT]: new RegExp(/(cat) (["']*)([a-zA-Z0-9_\-\\\/\.: ]+)\2/, 'g'),
+    [COMMAND_FILES_ADD]: new RegExp(/(add) (["']*)([a-zA-Z0-9_\-\. ]+)\2/, 'g'),
 
 });
 
