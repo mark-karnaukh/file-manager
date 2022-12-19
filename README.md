@@ -5,6 +5,8 @@ Assignment: File Manager
 ```
 git clone https://github.com/mark-karnaukh/file-manager.git
 
+cd ./file-manager
+
 git checkout main
 
 npm run start -- --username=your_username
