@@ -11,5 +11,5 @@ export const executeCommand = (command) => {
         ...osInfo,
         ...hash,
         ...files
-    }[commandType](commandValue.join(' ').replace(/['"]+/g, ''));
+    }[commandType](commandValue.join(' '));
 };

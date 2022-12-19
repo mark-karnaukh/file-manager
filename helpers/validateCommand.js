@@ -13,7 +13,10 @@ import {
     COMMAND_HASH,
     COMMAND_FILES_RM,
     COMMAND_FILES_CAT,
-    COMMAND_FILES_ADD
+    COMMAND_FILES_ADD,
+    COMMAND_FILES_MV,
+    COMMAND_FILES_RN,
+    COMMAND_FILES_CP
 } from '../constants.js';
 
 export const getCommandValidationRules = () => ({
@@ -29,6 +32,9 @@ export const getCommandValidationRules = () => ({
     [COMMAND_FILES_RM]: new RegExp(/(rm) (["']*)([a-zA-Z0-9_\-\\\/\.: ]+)\2/, 'g'),
     [COMMAND_FILES_CAT]: new RegExp(/(cat) (["']*)([a-zA-Z0-9_\-\\\/\.: ]+)\2/, 'g'),
     [COMMAND_FILES_ADD]: new RegExp(/(add) (["']*)([a-zA-Z0-9_\-\. ]+)\2/, 'g'),
+    [COMMAND_FILES_MV]: new RegExp(/(mv )(([a-zA-Z0-9_\-\\\/\.: "']+))/, 'g'),
+    [COMMAND_FILES_RN]: new RegExp(/(rn )(([a-zA-Z0-9_\-\\\/\.: "']+))/, 'g'),
+    [COMMAND_FILES_CP]: new RegExp(/(cp )(([a-zA-Z0-9_\-\\\/\.: "']+))/, 'g'),
 
 });
 
